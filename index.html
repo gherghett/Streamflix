@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Netflix</title>
+</head>
+
+<body>
+    <header>
+        <img src="streamflix.png" alt="Netflix">
+        <nav>
+            <ul>
+                <li><a href="">Hem</a></li>
+                <li><a href="">Serier</a></li>
+                <li><a href="">Filmer</a></li>
+                <li><a href="">Nytt hos oss</a></li>
+                <li><a href="">Min lista</a></li>
+            </ul>
+        </nav>
+        <div id="search">
+            <button><i class="material-icons">search</i></button>
+        </div>
+        <div id="profile-area">
+            <button><i class="material-icons">notifications</i></button>
+            <button><i class="material-icons">account_circle</i></button>
+        </div>
+    </header>
+    <div id="top-content-explorer">
+        <div class="splash-box">
+            <section class="splash" id="backenden">
+                <div class="title-desc-and-actions">
+                    <img src="images/Backenden/title-big.png" alt="">
+                    <div class="controls">
+                        <button><i class="material-icons">play_arrow</i>Spela</button>
+                        <button><i class="material-icons">add</i>Min lista</button>
+                    </div>
+                    <p>För fans av smarta men dumma komedier</p>
+                </div>
+            </section>
+        </div>
+        <div id="movie-row">
+            <button class="move-btn move-back-btn"><i class="material-icons">arrow_back</i></button>
+            <div class="scroll-row" id="movieScroll">
+                <img src="images/Backenden/card.png" alt="Backenden">
+                <img src="images/cards/inner_peace.png" alt="Backenden">
+                <img src="images/cards/farmors_spaghetti.png" alt="Backenden">
+                <img src="images/cards/hang.png" alt="Backenden">
+                <img src="images/cards/landet.png" alt="Backenden">
+                <img src="images/cards/do_over.png" alt="Backenden">
+                <img src="images/cards/farmors_spaghetti.png" alt="Backenden">
+                <img src="images/cards/inner_peace.png" alt="Backenden">
+                <img src="images/Backenden/card.png" alt="Backenden">
+                <img src="images/cards/do_over.png" alt="Backenden">               
+            </div>
+            <button class="move-btn move-fw-btn"></buttonclass><i class="material-icons">arrow_forward</i></button>
+        </div>
+    </div>
+    <script>
+        const scrollRow = document.getElementById('movieScroll');
+        const scrollAmount = 300; 
+    
+        document.querySelector('.move-back-btn').addEventListener('click', () => {
+            scrollRow.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    
+        document.querySelector('.move-fw-btn').addEventListener('click', () => {
+            scrollRow.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+
+</html>

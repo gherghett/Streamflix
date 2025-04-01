@@ -1,0 +1,149 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* helps with 100vh consistency */
+  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*---------HEADER-------------*/
+
+header {
+    position: sticky;
+    height: 4rem;
+    background-color: black;
+    padding: 0.5rem 2rem;
+    display: flex;
+    align-items: center;
+    img {
+        height: 3rem;
+    }
+    nav {
+        flex-grow: 2;
+    }
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        li, a, a:visited {
+            list-style-type: none;
+            color: white;
+            text-decoration: none;
+        }
+    }
+    /*this contains the bell and the user button, not search */
+    #profile-area {
+        display: flex;
+    }
+    button {
+        border: 0;
+        /* border-radius: 0.25rem; */
+        background: none;
+        color: rgb(255, 255, 255);
+        padding: 0.25rem 0.5rem;
+        margin: 0.25rem;
+        cursor: pointer;
+    }
+    /* display: none; */
+
+}
+
+/* HORIZONTAL CONTENT EXPLORER AREA */
+
+#top-content-explorer {
+    .splash-box {
+        height: 100vh;
+        max-height: 35rem;
+    } 
+    .splash {
+        width: 100%;
+        height: 100%; 
+        background-size:cover;
+        background-position: center top;
+        /* background-color: blue; */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        padding: 0 2rem;
+        
+        .title-desc-and-actions {
+            /* background-color: aqua; */
+            margin:  0;
+            margin-bottom: 5rem;
+            width: 15rem;
+            color: rgb(255, 255, 255);
+            img {
+                height: 10rem;
+            }
+            .controls {
+                display: flex;
+                button {
+                    flex: 1;
+                    border: none;
+                    background: rgba(90, 90, 90, 0.295);
+                    color: rgb(255, 255, 255);
+                    padding: 0.25rem 0.5rem;
+                    margin: 0.25rem;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            p {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+    #movie-row {
+        position: relative;
+        background: linear-gradient(
+            to bottom, 
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 30% 
+        );
+        /* background-color: aqua; */
+        height: 9rem;
+        margin-top: -5rem;
+        .scroll-row {
+            display: flex;
+            gap: 0.5rem;
+        }
+        img {
+            height: 8rem;
+        }
+        .scroll-row{
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth; /* for smooth scroll on button click */
+        }
+        .move-btn {
+            height: 7rem;
+            width: 5rem;
+            border: none;
+            background: rgba(90, 90, 90, 0.295);
+            color: rgb(255, 255, 255);
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            
+            /*animation*/
+            opacity: 0;
+        }
+        .move-btn:hover{
+            opacity: 1;
+        }
+        .move-fw-btn {
+            right:0;
+            top:0;
+        }
+    }
+}
+
+#backenden {
+    background-image: url(images/Backenden/splash.png);
+}
