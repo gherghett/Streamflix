@@ -53,11 +53,11 @@ header {
 
 #top-content-explorer {
     .splash-box {
-        /* max-height: 35rem; */
-        aspect-ratio: 16 / 9; /* or try 21 / 9 if you want it more cinematic */
+        aspect-ratio: 16 / 9; 
         width: 100%;
         max-height: 80vh; 
     } 
+    
     .splash {
         box-sizing: border-box;
         width: 100%;
@@ -103,6 +103,7 @@ header {
             }
         }
     }
+
     #movie-row {
         position: relative;
         background: linear-gradient(
@@ -119,12 +120,25 @@ header {
         }
         img {
             height: 8rem;
+            scroll-snap-align: start;
         }
+
         .scroll-row{
             overflow-x: auto;
             overflow-y: hidden;
             scroll-behavior: smooth; /* for smooth scroll on button click */
+            scroll-snap-type: x mandatory;
         }
+        /*---- Hide the scrollbarbut keep scrolling ----*/
+        .scroll-row {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+        .scroll-row::-webkit-scrollbar {
+            display: none;             /* Chrome, Safari, Opera */
+        }
+        /*----------------------------------------------*/
+
         .move-btn {
             height: 7rem;
             width: 5rem;
