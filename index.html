@@ -31,9 +31,9 @@
     </header>
     <div id="top-content-explorer">
         <div class="splash-box">
-            <section class="splash" id="backenden">
+            <section class="splash active" id="backenden">
                 <div class="title-desc-and-actions">
-                    <img src="images/Backenden/title-big.png" alt="">
+                    <img src="images/Backenden/title-big.png" alt="Back-enden">
                     <div class="controls">
                         <button><i class="material-icons">play_arrow</i>Spela</button>
                         <button><i class="material-icons">add</i>Min lista</button>
@@ -41,14 +41,44 @@
                     <p>För fans av smarta men dumma komedier</p>
                 </div>
             </section>
+            <section class="splash" id="inner-peace">
+                <div class="title-desc-and-actions">
+                    <img src="images/InnerPeace/big-title.png" alt="Inner Peace">
+                    <div class="controls">
+                        <button><i class="material-icons">play_arrow</i>Spela</button>
+                        <button><i class="material-icons">add</i>Min lista</button>
+                    </div>
+                    <p>Nothing can disturb him, who wants for nothing</p>
+                </div>
+            </section>
+            <section class="splash" id="farmors-spaghetti">
+                <div class="title-desc-and-actions">
+                    <img src="images/FarmorsSpaghetti/big-title.png" alt="Farmors Spaghetti">
+                    <div class="controls">
+                        <button><i class="material-icons">play_arrow</i>Spela</button>
+                        <button><i class="material-icons">add</i>Min lista</button>
+                    </div>
+                    <p>Varm, mysig, men framförallt en film om pasta.</p>
+                </div>
+            </section>
+            <section class="splash" id="hang">
+                <div class="title-desc-and-actions">
+                    <img src="images/Hang/big-title.png" alt="Farmors Spaghetti">
+                    <div class="controls">
+                        <button><i class="material-icons">play_arrow</i>Spela</button>
+                        <button><i class="material-icons">add</i>Min lista</button>
+                    </div>
+                    <p>Dark comedy for fans of really smart stuff</p>
+                </div>
+            </section>
         </div>
         <div id="movie-row">
             <button class="move-btn move-back-btn"><i class="material-icons">arrow_back</i></button>
             <div class="scroll-row" id="movieScroll">
-                <img src="images/Backenden/card.png" alt="Backenden">
-                <img src="images/cards/inner_peace.png" alt="Backenden">
-                <img src="images/cards/farmors_spaghetti.png" alt="Backenden">
-                <img src="images/cards/hang.png" alt="Backenden">
+                <img src="images/Backenden/card.png" onclick="showSplash('backenden')" alt="Backenden">
+                <img src="images/cards/inner_peace.png"  onclick="showSplash('inner-peace')" alt="Inner Peace">
+                <img src="images/cards/farmors_spaghetti.png"  onclick="showSplash('farmors-spaghetti')" alt="Farmors Spaghetti">
+                <img src="images/cards/hang.png" onclick="showSplash('hang')"  alt="He could not get the hang of it">
                 <img src="images/cards/landet.png" alt="Backenden">
                 <img src="images/cards/do_over.png" alt="Backenden">
                 <img src="images/cards/farmors_spaghetti.png" alt="Backenden">
@@ -61,7 +91,7 @@
     </div>
     <script>
         const scrollRow = document.getElementById('movieScroll');
-        const scrollAmount = 100; 
+        const scrollAmount = 500; 
     
         document.querySelector('.move-back-btn').addEventListener('click', () => {
             scrollRow.scrollBy({
@@ -76,6 +106,14 @@
                 behavior: 'smooth'
             });
         });
+
+        function showSplash(splash_id) {
+            // const new_active = document.getElementById(splash_id);
+            document.querySelectorAll('.splash').forEach((splash) => {
+                splash.classList.toggle('active', splash.id == splash_id);
+            });
+        }
+
     </script>
 
 </body>
